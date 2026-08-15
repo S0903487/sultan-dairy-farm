@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sultan Dairy — Farm Management</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <div class="logo"><img src="logo.png" alt="Sultan Dairy"></div>
+      <div><b>Sultan Dairy</b><small>Farm Management System</small></div>
+    </div>
+    <div id="nav" class="nav"></div>
+    <div class="foot">
+      <button class="btn sm ghost" style="width:100%" onclick="exportData()">Download backup (JSON)</button>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div class="title"><h1 id="pageTitle">Farm Dashboard</h1><p id="pageSub">Sultan Dairy — management cockpit</p></div>
+      <div class="actions" id="pageActions"></div>
+    </div>
+    <div class="content" id="app"></div>
+  </main>
+</div>
+<div id="modalRoot"></div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

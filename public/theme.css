@@ -1,0 +1,161 @@
+/* Sultan Dairy — MilkingCloud-inspired design system */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --text:#20252b; --muted:#6b7683; --faint:#8a94a0;
+  --line:#e6e9ed; --line-strong:#d8dde3;
+  --blue:#2878c8; --blue-2:#eaf3fb; --blue-dark:#1f5fa0;
+  --green:#2d9b68; --green-2:#e8f6ef;
+  --orange:#e99a3b; --orange-2:#fff4e4;
+  --red:#d95757; --red-2:#fdeaea;
+  --sidebar:#ffffff;
+  --shadow:0 1px 2px rgba(28,39,51,.04),0 2px 10px rgba(28,39,51,.06);
+  --radius:10px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--blue);text-decoration:none}
+
+/* ---------- Layout ---------- */
+.app{display:flex;min-height:100vh}
+.side{width:250px;background:var(--sidebar);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;display:flex;flex-direction:column;flex-shrink:0}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+
+/* ---------- Sidebar ---------- */
+.brand{display:flex;align-items:center;gap:10px;padding:18px 18px 14px;border-bottom:1px solid var(--line)}
+.brand .logo{width:38px;height:38px;border-radius:9px;overflow:hidden;flex-shrink:0;background:#fff;border:1px solid var(--line)}
+.brand .logo img{width:100%;height:100%;object-fit:contain;display:block}
+.brand b{font-size:15px;letter-spacing:-.01em;display:block;line-height:1.1}
+.brand small{color:var(--muted);font-size:11px;font-weight:500}
+.nav{flex:1;padding:10px 10px 16px}
+.nav .group{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);font-weight:700;padding:16px 12px 6px}
+.nav button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;color:#5a6470;text-align:left;padding:8px 12px;border-radius:8px;font-weight:500;margin:1px 0}
+.nav button:hover{background:#f1f5fa;color:var(--blue-dark)}
+.nav button.active{background:var(--blue-2);color:var(--blue);font-weight:700}
+.side .foot{padding:12px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:11px}
+
+/* ---------- Topbar ---------- */
+.topbar{display:flex;align-items:center;gap:14px;padding:14px 28px;background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.topbar .title{flex:1;min-width:0}
+.topbar h1{font-size:19px;margin:0;letter-spacing:-.02em;font-weight:700}
+.topbar p{margin:2px 0 0;color:var(--muted);font-size:12.5px}
+.topbar .actions{display:flex;gap:8px;align-items:center}
+.content{padding:24px 28px 40px}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-strong);background:#fff;color:#3c4650;padding:8px 13px;border-radius:8px;font-weight:600;font-size:13px;white-space:nowrap}
+.btn:hover{background:#f7f9fb;border-color:#c9d2da}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-dark)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--blue)}
+.btn.ghost:hover{background:var(--blue-2)}
+.btn.danger{color:var(--red);border-color:#f3c9c7}
+.btn.danger:hover{background:var(--red-2);border-color:var(--red)}
+.btn.sm{padding:5px 9px;font-size:12px;border-radius:7px}
+.icon-btn{border:1px solid var(--line);background:#fff;border-radius:7px;padding:4px 8px;font-size:13px;color:#5a6470}
+.icon-btn:hover{background:#f1f5fa;color:var(--blue-dark)}
+
+/* ---------- Cards / grids ---------- */
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}
+.two{grid-template-columns:1.4fr 1fr}
+.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+.card h2{font-size:14px;margin:0 0 12px;font-weight:700;letter-spacing:-.01em}
+.card h3{margin:0 0 4px;font-size:13.5px}
+.section{margin-top:18px}
+.section>.card{margin-top:12px}
+
+/* ---------- KPI ---------- */
+.kpi{position:relative;overflow:hidden}
+.kpi .k-dot{width:10px;height:10px;border-radius:50%;margin-bottom:12px}
+.kpi .label{color:var(--muted);font-size:12px;font-weight:600}
+.kpi .value{font-size:24px;font-weight:800;margin-top:4px;letter-spacing:-.02em}
+.kpi .hint{font-size:11px;color:var(--faint);margin-top:3px}
+.kpi .hint.up{color:var(--green)}
+.kpi .hint.down{color:var(--red)}
+
+/* ---------- Tables ---------- */
+.table-wrap{overflow:auto;border-radius:8px}
+.table{width:100%;border-collapse:collapse;font-size:13px}
+.table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.table th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);background:#fafbfc;font-weight:700;position:sticky;top:0}
+.table tbody tr:hover{background:#f8fafc}
+.table tbody tr:last-child td{border-bottom:0}
+.table .num{text-align:right;font-variant-numeric:tabular-nums}
+.table .actions{display:flex;gap:4px;justify-content:flex-end}
+.row-actions{display:flex;gap:4px}
+
+/* ---------- Badges ---------- */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700}
+.badge.ok{background:var(--green-2);color:var(--green)}
+.badge.warn{background:var(--orange-2);color:#9a651d}
+.badge.danger{background:var(--red-2);color:var(--red)}
+.badge.neutral{background:#eef1f4;color:#5a6470}
+
+/* ---------- Forms ---------- */
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.field input,.field select,.field textarea{border:1px solid var(--line-strong);border-radius:8px;padding:9px 11px;background:#fff;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-2)}
+.field .hint{font-size:11px;color:var(--faint)}
+.form-actions{grid-column:1/-1;display:flex;gap:8px;justify-content:flex-end;padding-top:4px}
+
+/* ---------- Search bar ---------- */
+.search{position:relative;display:inline-flex;align-items:center}
+.search input{border:1px solid var(--line-strong);border-radius:8px;padding:8px 11px;width:230px;background:#fff}
+.search input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-2)}
+.table-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.table-tools .count{color:var(--muted);font-size:12.5px}
+
+/* ---------- Modal ---------- */
+.modal-bg{position:fixed;inset:0;background:rgba(23,32,42,.45);display:flex;align-items:flex-start;justify-content:center;padding:48px 16px;z-index:100;animation:fade .12s ease}
+.modal{background:#fff;border-radius:12px;box-shadow:0 24px 60px rgba(20,30,45,.25);width:100%;max-width:640px;max-height:calc(100vh - 96px);overflow:auto;animation:pop .16s ease}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
+.modal-head h2{font-size:16px;margin:0;letter-spacing:-.01em}
+.modal-body{padding:20px}
+.modal-foot{display:flex;justify-content:flex-end;gap:8px;padding:14px 20px;border-top:1px solid var(--line);background:#fafbfc;border-radius:0 0 12px 12px}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+
+/* ---------- Misc ---------- */
+.empty{padding:34px;text-align:center;color:var(--faint)}
+
+.notice{padding:11px 14px;border:1px solid #dce9f4;background:#f4f8fc;border-radius:10px;color:#52697e;font-size:12.5px}
+.notice b{color:#35546f}
+.muted{color:var(--muted)}
+.faint{color:var(--faint)}
+.sub{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);font-weight:700;margin:16px 0 6px}
+.legend-item{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line)}
+.legend-item:last-child{border-bottom:0}
+.steps{display:grid;gap:9px}
+.step{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:#fff}
+.step .n{width:26px;height:26px;border-radius:50%;background:var(--blue-2);color:var(--blue);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.step .body{flex:1;min-width:0}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;background:#f6f8fa;border:1px solid var(--line);border-radius:6px;padding:2px 7px;display:inline-block;margin-top:3px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.bar{height:8px;background:#edf0f3;border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--blue);border-radius:inherit}
+.bar.green>i{background:var(--green)}
+.bar.orange>i{background:var(--orange)}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;background:#eef1f4;color:#5a6470}
+.toast{position:fixed;right:20px;bottom:20px;background:#20252b;color:#fff;padding:12px 16px;border-radius:9px;font-size:13px;display:none;z-index:200;box-shadow:0 10px 30px rgba(0,0,0,.2);max-width:340px}
+.toast.show{display:block;animation:pop .18s ease}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1100px){.kpis,.three{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}
+@media(max-width:760px){
+  .app{display:block}
+  .side{position:static;width:100%;height:auto;flex-direction:column}
+  .nav{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:2px;padding:8px}
+  .nav .group{display:none}
+  .nav button{width:auto;white-space:nowrap}
+  .content{padding:16px}
+  .topbar{padding:12px 16px;flex-wrap:wrap}
+  .kpis,.three,.two,.form{grid-template-columns:1fr}
+  .search input{width:100%}
+}

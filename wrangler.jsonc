@@ -1,0 +1,14 @@
+{
+  "name": "sultan-dairy-farm",
+  "compatibility_date": "2026-08-15",
+  "main": "worker.js",
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sultan-dairy-farm",
+      "database_id": "db034e1a-1d51-4747-8ba7-041585090004",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
