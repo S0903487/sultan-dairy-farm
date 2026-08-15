@@ -1,4 +1,5 @@
 /* Sultan Dairy — Farm Management System (v2) */
+
 'use strict';
 
 /* ============ Ingredient Database (56, from workbook) ============ */
