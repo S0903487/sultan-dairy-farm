@@ -1,4 +1,4 @@
-/* Sultan Dairy — Farm Management System (v2) */
+/* Sultan Dairy — Farm Management System */
 
 'use strict';
 
